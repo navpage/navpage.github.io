@@ -1,4 +1,8 @@
-## Codeblocks
+---
+status: deprecated
+---
+
+# Codeblocks
 
 
 ### Adding annotations

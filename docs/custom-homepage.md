@@ -1,9 +1,10 @@
 ---
-title: Creating a custom homepage
 hide:
   - footer
 beta: true
 ---
+
+# Creating a custom homepage
 
 ## Understanding theme extending
 

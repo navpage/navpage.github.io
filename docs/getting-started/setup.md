@@ -1,9 +1,10 @@
 ---
-title: Setup Example
 hide:
   - toc
   - footer
 ---
+
+# Setup Example
 
 ## Creating step by step page using custom markdown
 

@@ -1,11 +1,10 @@
 ---
-title: Markdown examples
 hide:
   - footer
 status: new
 ---
 
-# Markdown
+# Markdown Example
 
 ## Setting up markdown files with custom meta
 
@@ -26,7 +25,6 @@ hide:
 
 For more info on any markdown options, because i havent covered everything (such as buttons, content tabs, math, diagrams etc) follow the guides on [material for Mkdocs](https://squidfunk.github.io/mkdocs-material/reference/).
 
-# H1
 ## H2
 ### H3
 #### H4

@@ -62,7 +62,8 @@
 }
 
 .md-header__topic {
-    font-family: "Encode Sans", serif;
+    /*font-family: "Encode Sans", serif;*/
+    font-family: var(--md-text-font-family);
     overflow-wrap: break-word;
     font-weight: 500;
     letter-spacing: -0.01em;
@@ -150,7 +151,8 @@ li.md-tabs__item {
 /* Nav titles */
 .md-nav__item--section > .md-nav__link,
 .md-nav__title {
-    font-family: "Inter", "Encode Sans", serif;
+    /*font-family: "Inter", "Encode Sans", serif;*/
+    font-family: var(--md-text-font-family);
     color: var(--md-title-color);
     font-weight: var(--fw-semibold);
     margin-bottom: 0.1rem;
@@ -195,7 +197,7 @@ label.md-nav__link + nav label.md-nav__link {
 
 /* --- Title styling */
 .md-nav--primary ul:first-of-type .md-nav__item--section label.md-nav__link {
-    font-family: "Inter", "Encode Sans", serif;
+    font-family: var(--md-text-font-family);
 }
 
 [data-md-color-scheme="default"] .md-nav--primary .md-nav__title,

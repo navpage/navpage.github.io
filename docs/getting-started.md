@@ -1,7 +1,4 @@
----
-title: Getting started
----
-
+# Getting started
 
 In this category i will mention some necessary and quality of life features.
 
