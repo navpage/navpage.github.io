@@ -1,0 +1,304 @@
+
+{#-
+    This file was automatically generated - do not edit
+  -#}
+  {% extends "main.html" %}
+  {% block styles %}
+    {{ super() }}
+    <style>
+        /* Variables */
+        :root {
+
+        --clr-white-hsl: 0, 0%, 100%;
+        --clr-lightgrey-hsl: 0, 0%, 90%;
+        --clr-black-hsl: 0, 0%, 0%;
+
+        --gutter: 30px;
+        --clr-white: hsl(var(--clr-white-hsl));
+        --clr-lightgrey: hsl(var(--clr-lightgrey-hsl));
+        --clr-black: hsl(var(--clr-black-hsl));
+
+        --clr-pink-100: #F15F79;
+        --clr-pink-200: #B24592;
+
+        --gradient-primary: linear-gradient(
+            var(--clr-pink-100),
+            var(--clr-pink-200));
+
+        /* size, for padding, margin, gaps etc */
+        --size-04: 4px;
+        --size-08: 8px;
+        --size-12: 12px;
+        --size-20: 20px;
+
+        /* border-radius */
+        --br-06: 6px;
+
+        /* animation duration */
+        --md-transition-duration: .2s;
+        }
+
+        /* Little reset */
+        body {
+        line-height: 1.4;
+        text-wrap: pretty;
+        font-size: .8rem;
+        }
+        p, h1, h2, h3, h4, h5, h6 {
+        margin: 0;
+        padding: 0;
+        }
+        /* Hide md-main */
+        .md-main {
+        display: none;
+        }
+
+
+        /* Fonts */
+
+        h1 {
+        font-family: "Encode Sans", "Inter", serif;
+        }
+
+        h2 {
+        font-family: "Inter", "Encode Sans", serif;  
+        }
+
+        /* Layout structure */
+        .lp-container {
+        width: 100%;
+        background: var(--gradient-primary);
+
+        & h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        & p {
+            color: hsl(var(--clr-black-hsl), .65);
+        }
+        }
+
+        .lp-layer {
+        background-color: white;
+        display: block;
+        padding-inline: var(--size-08);
+        }
+
+        .layer__inner {
+        max-width: 61rem;
+        margin-inline: auto;
+        padding-block: 84px;
+        }
+
+        .layer__header {
+        width: 100%;
+        display: block;
+        padding-block: 20px;
+        text-align: center;
+
+        & h2 {
+            margin-bottom: 0;
+        }
+        }
+
+        .even-columns {
+        display: grid;
+        gap: var(--gutter);
+        }
+
+        .grid-column-3 {
+        display: grid;
+        gap: var(--gutter);
+        }
+
+        /* if screen wider than 50em, put columns next to eachother */
+        @media (min-width: 50em) {
+        .even-columns {
+            grid-auto-flow: column;
+        }
+
+        .grid-column-3 {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        }
+
+        .button {
+        --md-primary-fg-color: #4350b3;
+        --md-primary-fg-color--dark: #303fa1;
+        padding: var(--size-12) var(--size-20);
+        display: inline-flex;
+        position: relative;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: .8rem;
+        font-weight: 500;
+        line-height: 1;
+        margin-inline: var(--size-08);
+        transition: all ease-in-out var(--md-transition-duration);
+
+        color: var(--clr-white);
+        background: linear-gradient(135deg, var(--md-primary-fg-color) 0%, var(--md-primary-fg-color--dark) 50%) no-repeat;
+
+        border-radius: var(--br-06);
+        }
+
+        /* inverted button (black) using data attributes*/
+        .button[data-type="inverted"] {
+        background: linear-gradient(135deg, #393F46 0%, #202328 50%) no-repeat;
+        }
+
+        .button:hover,
+        .button:active {
+        outline: 4px solid var(--clr-white);
+        }
+
+        /* focus when using tab key */
+        .button:focus {
+        outline-offset: var(--size-04);
+        outline: 4px solid var(--clr-white);
+        }
+
+        /* -----------------------
+        Hero styling
+        ------------------------ */
+        .hero {
+        background-color: transparent;
+        padding-block: 80px;
+
+        & h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--clr-white);
+        text-shadow: 1px 4px hsl(var(--clr-black-hsl), .2);
+        margin-bottom: 1rem;
+        line-height: 1.2;
+        max-width: 35ch;
+        position: relative;
+        }
+
+        & p {
+        font-size: 1rem;
+        color: var(--clr-white);
+        margin-bottom: 2rem;
+        font-weight: 400;
+        line-height: 1.5;
+        max-width: 55ch;
+        }
+        }
+
+        .hero-text {
+        align-content: center;
+        }
+
+        .hero-image {
+        align-content: center;
+        height: auto;
+
+        & img {
+            width: 100%;
+            height: 100%;
+        }
+        }
+
+        /* -----------------------
+        Content styling
+        ------------------------ */
+
+        .features .layer__header h2 {
+        font-size: 3rem;
+        background: linear-gradient(135deg, var(--clr-pink-100), var(--clr-pink-200));
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        }
+
+        .grid_card {
+        background: hsl(var(--clr-black-hsl), .05);
+        padding: var(--size-20);
+        border-radius: var(--size-08);
+        }
+
+        .grid_card .button {
+        margin-top: var(--size-20);
+        background: linear-gradient(135deg, var(--md-primary-fg-color) 0%, var(--md-primary-fg-color--dark) 50%, var(--clr-pink-100) 50%, var(--clr-pink-200) 100%) no-repeat;
+        background-size: 230% 100%;
+        transition: background-position 0.5s;
+        background-position: 0% 0%;
+        }
+
+        .grid_card .button:hover {
+        background-position: 100% 0%;
+        }
+    </style>
+  {% endblock %}
+  {% block tabs %}
+    {{ super() }}
+    <style>.md-header{position:initial}.md-main__inner{margin:0}.md-content{display:none}@media screen and (min-width:60em){.md-sidebar--secondary{display:none}}@media screen and (min-width:76.25em){.md-sidebar--primary{display:none}}</style>
+    <section class="lp-container">
+        <section class="lp-layer hero">
+            <div class="layer__inner | even-columns">
+                <!-- To change the alignment of the text & image just place the <div class="hero-image"> above "hero-text" -->
+                <div class="hero-text">
+                    <h1>Documentation that simply works</h1>
+                    <p>Write your documentation in Markdown and create a professional static site in minutes – searchable, customizable, in 60+ languages, for all devices.</p>
+                    <!--                                                By using data-type inverted we can create an alternative styling -->
+                    <a class="button" href="#">Get started</a> <a class="button" data-type="inverted" href="#">Learn more</a>
+                </div>
+                <div class="hero-image">
+                    <img src="../assets/screenshots/illustration.png" alt="hero image">
+                </div>
+            </div>
+        </section>
+        <section class="lp-layer content">
+            <div class="layer__inner">
+                <h2>Some sample text under a h2 tag</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta vero quae incidunt eum porro dolor debitis totam distinctio culpa repudiandae natus molestiae, ad necessitatibus sint itaque nesciunt nisi placeat alias!
+                Consectetur neque non dolor explicabo optio autem voluptates cupiditate velit, voluptatibus repudiandae sapiente, eveniet consequuntur error excepturi iste libero dolore tempora aperiam nisi fugiat modi! Quam facilis dolor consequatur aliquid.
+                Sapiente quis quasi tempora unde officiis mollitia alias illum aperiam architecto! Atque, voluptatem iure! Vero, distinctio. Perspiciatis pariatur reprehenderit animi sint doloremque autem ipsum dicta voluptatem repudiandae omnis, libero a.
+                Nulla quas reprehenderit adipisci dolore omnis odit nisi unde tenetur? Recusandae nostrum illo fugiat harum accusantium laudantium dignissimos suscipit sapiente ea hic beatae in quam, architecto rem nisi quis iusto!
+                Quisquam, recusandae perferendis quam quibusdam similique animi, magni error voluptatem necessitatibus sapiente, voluptatibus officiis asperiores dolorem doloremque vitae molestiae quas cum maxime quia possimus? Eius recusandae quos molestiae ut aperiam.
+                Aliquam itaque voluptatibus minus fugit laboriosam aperiam dolor facere porro necessitatibus cupiditate magni ut quod accusamus sed quasi cumque nam accusantium doloremque, officia dicta ea reprehenderit fuga. Iusto, recusandae officiis!
+                Velit, libero nostrum excepturi similique porro perferendis culpa hic nam commodi asperiores, odio necessitatibus perspiciatis, voluptatum aliquam laborum ex iure cumque magni. Ab perferendis maxime vero voluptatum voluptatibus exercitationem quam?
+                Quo inventore sapiente voluptates dolorem modi cupiditate ducimus nobis, molestias consectetur similique officiis magni vero veritatis eveniet quis exercitationem numquam quam architecto sit odit adipisci. Non numquam qui quod a!
+                Dolorem expedita velit qui voluptatibus blanditiis laboriosam! Neque dolore architecto tempore inventore eius. Sequi quod aperiam eum, quae, quibusdam fugit est laudantium accusamus optio distinctio sapiente exercitationem soluta praesentium aliquid.
+                Doloremque molestiae odio neque saepe necessitatibus numquam atque, voluptates reiciendis similique natus ipsa unde dignissimos quos quod dolorum reprehenderit vitae. Odit eum repellendus id quod dolore, voluptatum delectus qui rem!
+                Tempore natus eaque sed, dolorem culpa a beatae totam quasi, adipisci facilis similique laudantium sit esse, enim soluta deleniti nemo vero ut nihil. Distinctio velit officia excepturi porro, quia quae?
+                Porro sit sunt ea dicta eum similique eius asperiores officiis vitae, ex cupiditate, saepe quo provident nesciunt molestias doloremque dignissimos qui fuga dolorum maxime inventore! Reprehenderit corrupti at inventore provident.
+                Culpa, libero? Officiis ab iste neque quibusdam aliquid quod consectetur similique doloribus impedit esse, est perferendis blanditiis sint harum quisquam at assumenda exercitationem ullam quam debitis, saepe magnam. Nostrum, doloremque.
+                Quisquam voluptatibus odio, iure laboriosam repellendus eum nostrum? Provident, vel accusantium. Nobis quod iusto modi ea, non iure, excepturi, molestiae in deleniti labore distinctio! Pariatur quidem commodi natus perferendis distinctio.
+                Repellendus culpa tempore eius deleniti illo enim voluptatem iure vitae, aut dicta error, aperiam quidem voluptatibus, quod distinctio minima temporibus illum repudiandae! Dolor error quaerat dolorem nam quae, obcaecati possimus!
+                Error, tempora? Expedita esse, veritatis aut praesentium deserunt, nemo nam quidem amet at, dicta commodi odit! Pariatur odit soluta aliquid nam, distinctio, sunt aut quod voluptatibus repellendus quasi, dolorum assumenda.
+                Neque, deserunt odio! Rerum provident ipsa sapiente, eos enim, animi, tenetur sint totam mollitia quasi qui dolore voluptas. Porro exercitationem corrupti voluptatibus dolores, aspernatur similique quod nulla laborum consectetur obcaecati.
+                Minus, cumque veniam vitae sint architecto nulla, illum debitis, alias aperiam asperiores ex temporibus praesentium facilis iusto reprehenderit? Laborum, nostrum! Illo tempora, quis officiis doloribus cum nemo quas quaerat dolorem?
+                Ipsa illo, pariatur unde odio blanditiis reprehenderit tempore ad consectetur quasi earum quam cum quo delectus ullam quos soluta ab, optio dolorum quas illum deleniti architecto magnam vel. Optio, earum?
+                At nostrum ipsa praesentium non eligendi consequatur. Totam, repellat? Fugit accusantium ullam ratione, inventore, minima fuga ipsum praesentium itaque voluptates quaerat quod molestias est suscipit tempora rerum pariatur, neque rem?</p>
+            </div>
+        </section>
+        <section class="lp-layer features">
+            <div class="layer__inner">
+                <div class="layer__header"><h2>Simple 3 column grid</h2></div>
+                <div class="grid-column-3">
+                    <div class="grid_card">
+                        <h2>Some sample text in a h2 tag</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor facilis officiis harum rerum? Corporis atque nesciunt quis officiis incidunt, perferendis reiciendis natus quo repellat ex, exercitationem maxime eaque suscipit sed.
+                        Totam aut quod accusantium ad, corrupti repellendus dolorum ullam, commodi pariatur a alias necessitatibus adipisci. Optio dolorum officia fuga delectus saepe aut, velit eaque, consectetur voluptatem libero et aliquam reiciendis.</p>
+                        <a class="button" href="#">Get started</a>
+                    </div>
+                    <div class="grid_card">
+                        <h2>Some sample text in a h2 tag</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor facilis officiis harum rerum? Corporis atque nesciunt quis officiis incidunt, perferendis reiciendis natus quo repellat ex, exercitationem maxime eaque suscipit sed.
+                        Totam aut quod accusantium ad, corrupti repellendus dolorum ullam, commodi pariatur a alias necessitatibus adipisci. Optio dolorum officia fuga delectus saepe aut, velit eaque, consectetur voluptatem libero et aliquam reiciendis.</p>
+                        <a class="button" href="#">Get started</a>
+                    </div>
+                    <div class="grid_card">
+                        <h2>Some sample text in a h2 tag</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor facilis officiis harum rerum? Corporis atque nesciunt quis officiis incidunt, perferendis reiciendis natus quo repellat ex, exercitationem maxime eaque suscipit sed.
+                        Totam aut quod accusantium ad, corrupti repellendus dolorum ullam, commodi pariatur a alias necessitatibus adipisci. Optio dolorum officia fuga delectus saepe aut, velit eaque, consectetur voluptatem libero et aliquam reiciendis.</p>
+                        <a class="button" href="#">Get started</a>
+                    </div>
+                </div>
+                <p align="center" style="margin-top: 64px;">Copyright &copy; <a href="https://github.com/A3Bagged"><span style="color: var(--clr-pink-200); font-weight: 600;">Chris VL</span></a></p>
+            </div>
+        </section>
+    </section>
+  {% endblock %}
