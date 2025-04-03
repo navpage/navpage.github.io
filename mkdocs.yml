@@ -1,13 +1,13 @@
 # Project information
-site_name: My Docs
-site_url: https://a3bagged.github.io/theme-test/
-site_author: Chris van Liere
+site_name: NavPage Docs
+site_url: https://navpage.github.io/
+site_author: Steven Shu,
 site_description: >-
   Unlock the best of your printer with back-to-basic firmware, customizable for all creality printers. Achieve more results with less creality.
 
 #Repository
-repo_name: A3Bagged/theme-test
-repo_url: https://github.com/A3Bagged/theme-test
+repo_name: Navpage Themes
+repo_url: https://github.com/navpage/navpage.github.io
 edit_uri: edit/main/docs/
 
 copyright: Copyright &copy; 2024 - All rights reserved
@@ -15,7 +15,7 @@ copyright: Copyright &copy; 2024 - All rights reserved
 theme:
   name: material
   custom_dir: custom/overrides
-  language: en
+  language: zh
 
   font:
     text: Inter
@@ -49,7 +49,6 @@ theme:
     - content.tabs.link
     - content.footnote.tooltips
     - content.action.edit
-    #- content.action.view
     - content.tooltips
     - navigation.top
     - navigation.tabs
@@ -104,14 +103,8 @@ extra:
     property: !ENV GOOGLE_ANALYTICS_KEY
   #generator: false
   social:
-    - icon: simple/kofi
-      link: https://ko-fi.com/pellcorp49698
-    - icon: material/hand-coin
-      link: https://gofund.me/2033eedb
     - icon: simple/github
-      link: https://github.com/pellcorp
-    - icon: simple/discord
-      link: https://discord.gg/tGGVn5qjgv
+      link: https://github.com/navpage
 
 # Extensions
 markdown_extensions:
@@ -152,8 +145,8 @@ markdown_extensions:
 
 # Page tree
 nav:
-  - Home: index.md
-  - Getting started:
+  - 主页: index.md
+  - 快速开始:
     - getting-started.md
     - Markdown: getting-started/markdown.md
     - Admonitions: getting-started/admonitions.md
@@ -161,11 +154,10 @@ nav:
     - Custom:
       - Setup example: getting-started/setup.md
       - Using beta tags: getting-started/test.md
-  - Blog:
+  - 博客:
     - blog/index.md
-  - Example pages:
+  - 示例页面:
     - cartographer.md
     - FAQ.md
-  - Tutorials:
+  - 教程:
     - custom-homepage.md
-    - homepage-live-demo.md
