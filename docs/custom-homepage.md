@@ -342,8 +342,6 @@ Luckily there's a lot of tutorial and articles out there about parallax scrollin
 
 <span class="heart">:heart:</span> If this helped you and you want to support me, you can buy me a <a href='https://ko-fi.com/cvanliere' target='_blank'>:coffee: coffee</a>.
 
-[Live demo](homepage-live-demo.md){ .md-button .md-button--primary }
-
 ![image](assets/screenshots/template_.png)
 
 [^1]: Css variables/properties are amazing, you set up colors, font-sizes, or anything you want in the root and it let's you use these variables anywhere in your css. for example: `background-color: var(--my-color);` if you change the `--my-color` variable it changes it everywhere you used it. [Read more](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties).

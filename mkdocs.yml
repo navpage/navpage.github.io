@@ -101,7 +101,7 @@ extra:
   analytics:
     provider: google
     property: !ENV GOOGLE_ANALYTICS_KEY
-  #generator: false
+  generator: false
   social:
     - icon: simple/github
       link: https://github.com/navpage
@@ -161,3 +161,7 @@ nav:
     - FAQ.md
   - 教程:
     - custom-homepage.md
+
+
+hooks:
+  - copyright.py    
