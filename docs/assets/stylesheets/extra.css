@@ -118,3 +118,5 @@ html {
     60% { transform: scale(1.15); }
     75% { transform: scale(1.2); }
 }
+
+.md-header--lifted~.md-container .md-typeset :target{--md-scroll-margin: 5rem;}
