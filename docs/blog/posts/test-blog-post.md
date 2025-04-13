@@ -2,7 +2,7 @@
 title: Test Blog-post
 date: 2024-12-18
 authors: 
-  - A3bagged
+  - shenweiyan
 slug: test-blog-post
 description: >
   Share the love – you can now add a badge to your README, showing that your

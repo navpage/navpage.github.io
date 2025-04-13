@@ -2,8 +2,7 @@
 title: Adding a badge to your project
 date: 2023-11-30
 authors:
-  - pellcorp
-  - A3bagged
+  - shenweiyan
 slug: adding-a-badge-to-your-project
 description: >
   Share the love – you can now add a badge to your README, showing that your

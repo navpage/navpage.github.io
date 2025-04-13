@@ -13,4 +13,4 @@ nav:
         - cartographer.md
         - FAQ.md
     - 教程:
-        - 创建自定义主页: custom-homepage.md
+        - WebStack-Hugo 教程: tutorial/webstack-hugo-tutorial.md
