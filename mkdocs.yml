@@ -88,6 +88,9 @@ plugins:
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
   - tags
   - awesome-nav
+  - glightbox:
+      auto_caption: false
+      caption_position: bottom
 
   # INSIDERS=1 mkdocs build
   - group:
