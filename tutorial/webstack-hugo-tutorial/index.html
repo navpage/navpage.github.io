@@ -1,0 +1,1718 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Unlock the best of your printer with back-to-basic firmware, customizable for all creality printers. Achieve more results with less creality.">
+      
+      
+        <meta name="author" content="Steven Shu,">
+      
+      
+        <link rel="canonical" href="https://navpage.github.io/tutorial/webstack-hugo-tutorial/">
+      
+      
+        <link rel="prev" href="../../FAQ/">
+      
+      
+      
+      <link rel="icon" href="../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>WebStack-Hugo 教程 - NavPage Docs</title>
+      
+    
+    
+  
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M17%2013h-4v4h-2v-4H7v-2h4V7h2v4h4m-5-9A10%2010%200%200%200%202%2012a10%2010%200%200%200%2010%2010%2010%2010%200%200%200%2010-10A10%2010%200%200%200%2012%202%22/%3E%3C/svg%3E');}</style>
+
+
+    
+  <link rel="stylesheet" href="../../assets/stylesheets/customs.css">
+  <link rel="stylesheet" href="../../assets/stylesheets/partials/colors.css">
+  <link rel="stylesheet" href="../../assets/stylesheets/partials/setup.css">
+  <link rel="stylesheet" href="../../assets/stylesheets/partials/layout.css">
+  <link rel="stylesheet" href="../../assets/stylesheets/partials/reference.css">
+  <link rel="stylesheet" href="../../assets/stylesheets/partials/typeset.css">
+
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config",""),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#webstack-hugo" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="不再显示此消息">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              </button>
+            
+            
+  <div class="announce_text">
+    欢迎使用 NavPage Insiders 导航主题！
+  </div>
+
+          </div>
+          
+            <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
+          
+        </aside>
+      
+    </div>
+    
+    
+      <!-- Determine classes -->
+
+
+  
+
+
+<!-- Header -->
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav
+    class="md-header__inner md-grid--wide"
+    aria-label="页眉"
+  >
+
+
+    <!-- Button to open drawer -->
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+
+    <!-- Header title -->
+    <div class="md-header__title" data-md-component="header-title" style="margin-left: .6rem;">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="mdx-header--logo">
+            <!--svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28.87164855957031 37.858695652173914" fill="none" style="max-height: 500px" width="28.87164855957031" height="37.858695652173914">
+                <path fill="#fff" d="M88.036 14.02c-.132-.255-.443-.382-.933-.382h-.764l-.184.183v21.303l.183.184h.765c.49 0 .8-.128.933-.383s.199-.617.199-1.086v-6.185c.436.282.884.532 1.346.752a6.116 6.116 0 0 0 2.6.566c.877 0 1.754-.27 2.63-.811.877-.551 1.606-1.408 2.187-2.571.582-1.163.872-2.678.872-4.545 0-1.52-.194-2.857-.581-4.01-.387-1.153-.963-2.05-1.728-2.693-.755-.653-1.688-.98-2.799-.98-.928 0-1.769.189-2.523.566a6.592 6.592 0 0 0-2.004 1.542v-.363c0-.48-.066-.842-.199-1.087Zm.199 3.703v7.93c.362.244.755.493 1.178.748.795.47 1.657.704 2.584.704.622 0 1.219-.204 1.79-.612.57-.418 1.035-1.071 1.391-1.96.368-.887.551-2.05.551-3.488 0-1.388-.158-2.505-.474-3.352-.316-.857-.734-1.48-1.254-1.867-.51-.398-1.056-.597-1.637-.597-.632 0-1.274.164-1.927.49a5.743 5.743 0 0 0-1.743 1.393c-.167.193-.32.396-.459.611ZM3.991 1.698C3.991.76 4.747 0 5.68 0h17.622c2.425 0 4.39 1.977 4.39 4.415v27.17c0 2.438-1.965 4.415-4.39 4.415H1.69C.756 36 0 35.24 0 34.302s.756-1.698 1.689-1.698h21.613c.56 0 1.013-.456 1.013-1.02V4.416c0-.563-.453-1.019-1.013-1.019H5.68c-.933 0-1.689-.76-1.689-1.698Z" clip-rule="evenodd" fill-rule="evenodd"/>
+                <path fill="#fff" d="M9.456 9.85c0-.939.756-1.7 1.689-1.7h8.78c.933 0 1.688.761 1.688 1.7 0 .937-.755 1.697-1.688 1.697h-8.78c-.933 0-1.69-.76-1.69-1.698ZM2.026 18c0-.938.756-1.698 1.689-1.698h16.21c.933 0 1.688.76 1.688 1.698s-.755 1.698-1.688 1.698H3.715c-.933 0-1.689-.76-1.689-1.698ZM6.079 26.15c0-.937.756-1.697 1.688-1.697h12.158c.933 0 1.688.76 1.688 1.698s-.755 1.698-1.688 1.698H7.767c-.932 0-1.688-.76-1.688-1.698Z" clip-rule="evenodd" fill-rule="evenodd"/>
+              </svg-->NavPage
+          </span>
+        </div>
+        <!--div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              WebStack-Hugo 教程
+            
+          </span>
+        </div-->
+      </div>
+    </div>
+
+    <!-- Navigation tabs (sticky) -->
+    
+        
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  主页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../getting-started/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  快速开始
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../blog/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  博客
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../cartographer/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  示例页面
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+    
+  
+  教程
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+    
+
+    <!-- empty space div -->
+     <div class="void"></div>
+
+    <!-- Color palette toggle -->
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+
+    <!-- User preference: color palette -->
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+
+    <!-- Site language selector -->
+    
+
+    <!-- Button to open search modal -->
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+
+      <!-- Search interface -->
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    <!-- Repository information -->
+    
+      <div class="md-header__source">
+        <a href="https://github.com/navpage/navpage.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Navpage Themes
+  </div>
+</a>
+      </div>
+    
+  </nav>
+
+</header>
+
+
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="NavPage Docs" class="md-nav__button md-logo" aria-label="NavPage Docs" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    NavPage Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/navpage/navpage.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Navpage Themes
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    主页
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../getting-started/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    快速开始
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../blog/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    博客
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../cartographer/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    示例页面
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    教程
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            教程
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    WebStack-Hugo 教程
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    WebStack-Hugo 教程
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      主题开源地址
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      主题展示地址
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      为什么做这个网站
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      跟其他导航网站有什么区别
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows 下安装部署
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Windows 下安装部署">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hugo" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一，下载 hugo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      第二，解压
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      第三，检测是否安装成功
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      第四，下载主题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      第五，解压和重命名
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      第六，安装主题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      第七，启动预览
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux 下安装部署
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#html" class="md-nav__link">
+    <span class="md-ellipsis">
+      导出 HTML 静态资源
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="导出 HTML 静态资源">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 生成静态页面内容
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 部署站点
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用说明与技巧
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="使用说明与技巧">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      左导航栏图标
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      调整头部搜索栏
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      自定义头部导航
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      获取网站图标
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      已知问题
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      感谢墙
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      赞赏
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      反馈与交流
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      主题开源地址
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      主题展示地址
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      为什么做这个网站
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      跟其他导航网站有什么区别
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows 下安装部署
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Windows 下安装部署">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hugo" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一，下载 hugo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      第二，解压
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      第三，检测是否安装成功
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      第四，下载主题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      第五，解压和重命名
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      第六，安装主题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      第七，启动预览
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux 下安装部署
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#html" class="md-nav__link">
+    <span class="md-ellipsis">
+      导出 HTML 静态资源
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="导出 HTML 静态资源">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 生成静态页面内容
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 部署站点
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用说明与技巧
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="使用说明与技巧">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      左导航栏图标
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      调整头部搜索栏
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      自定义头部导航
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      获取网站图标
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      已知问题
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      感谢墙
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      赞赏
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      反馈与交流
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/navpage/navpage.github.io/edit/main/docs/tutorial/webstack-hugo-tutorial.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+
+<h1 id="webstack-hugo">WebStack-Hugo 安装教程<a class="headerlink" href="#webstack-hugo" title="Permanent link">&para;</a></h1>
+<p><strong>📢 让更多人的人制作自己的导航网站。如果你觉得本主题对你有所帮助，欢迎请作者 <a href="https://kg.weiyan.cc/0000/img/donate.webp">喝杯咖啡</a> &gt;.&lt;</strong></p>
+<h2 id="_1">主题开源地址<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p><a href="https://github.com/shenweiyan/WebStack-Hugo"><strong>GitHub</strong></a> | <a href="https://gitee.com/shenweiyan/WebStack-Hugo"><strong>Gitee</strong></a> | <a href="https://gitcode.com/shenweiyan/WebStack-Hugo"><strong>GitCode</strong></a></p>
+<h2 id="_2">主题展示地址<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><a href="https://bioit.top/"><strong>WebStack-Hugo 网址导航</strong></a> | <a href="https://hao.bioitee.com/"><strong>生信网址导航</strong></a> </p>
+<h2 id="_3">为什么做这个网站<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>之所以想着要给自己倒腾一个导航网站，主要有几个原因：</p>
+<ul>
+<li>购买了一个域名，且也备案成功了，总想折腾点跟它有关的事情；</li>
+<li>经常在公司、家里（有时候还有其他的临时场所）更换电脑，每次同步书签（或者登陆一些导航网站）需要各种登陆，麻烦。</li>
+</ul>
+<p>说干就干，从 <a href="https://github.com/WebStackPage/WebStackPage.github.io">WebStack 的开源项目</a>开始，断断续续的折腾了好几天，终于把轮子造起来了。</p>
+<p align="center"><a class="glightbox" href="https://kg.weiyan.cc/2023/11/webstack-hugo-collapse.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://kg.weiyan.cc/2023/11/webstack-hugo-collapse.png" width=800></a></p>
+<p align="center"><a class="glightbox" href="https://kg.weiyan.cc/2023/11/webstack-hugo-expand.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://kg.weiyan.cc/2023/11/webstack-hugo-expand.png" width=800></a></p>
+<p align="center"><a class="glightbox" href="https://kg.weiyan.cc/2023/11/webstack-hugo-search.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://kg.weiyan.cc/2023/11/webstack-hugo-search.png" width=800></a></p>
+<p align="center"><a class="glightbox" href="https://kg.weiyan.cc/2023/11/webstack-hugo-phone.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://kg.weiyan.cc/2023/11/webstack-hugo-phone.png" alt="webstack-apple" width=600></a></p>
+
+<h2 id="_4">跟其他导航网站有什么区别<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>这是 Hugo 版 WebStack 主题。可以借助 Github/Gitee Pages 或者云平台直接托管部署，无需服务器。</p>
+<p>本项目是基于纯静态的网址导航网站 <a href="https://github.com/WebStackPage/WebStackPage.github.io">webstack.cc</a> 制作的 <a href="https://gohugo.io/">Hugo</a> 主题，其中部分代码参考了以下几个开源项目：</p>
+<ul>
+<li><a href="https://github.com/WebStackPage/WebStackPage.github.io">https://github.com/WebStackPage/WebStackPage.github.io</a></li>
+<li><a href="https://github.com/WebStackPage/WebStackPage.github.io">https://github.com/liutongxu/liutongxu.github.io</a></li>
+<li><a href="https://github.com/iplaycode/webstack-hugo">https://github.com/iplaycode/webstack-hugo</a></li>
+</ul>
+<p>总体说一下特点：</p>
+<ul>
+<li>采用了一直以来最喜欢的 hugo 部署方式，方便高效。</li>
+<li>主要的配置信息都集成到了 <strong>config.toml</strong>，一键完成各种自定义的配置。</li>
+<li>导航的各个信息都集成在 <strong>data/webstack.yml</strong> 文件中，方便后续增删改动。</li>
+</ul>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">taxonomy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">科研办公</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fas fa-flask fa-lg</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">list</span><span class="p">:</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">term</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">生物信息</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">      </span><span class="nt">links</span><span class="p">:</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NCBI</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">          </span><span class="nt">logo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">n/ncbi.jpg</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">          </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.ncbi.nlm.nih.gov/</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">          </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">National Center for Biotechnology Information.</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Bioconda</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">          </span><span class="nt">logo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">b/bioconda.jpg</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">          </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://anaconda.org/bioconda/</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">          </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Bioconda</span><span class="nv"> </span><span class="s">::</span><span class="nv"> </span><span class="s">Anaconda.org.&quot;</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">term</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">云服务器</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">      </span><span class="nt">links</span><span class="p">:</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">阿里云</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">          </span><span class="nt">logo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a/aliyun.jpg</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">          </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.aliyun.com/</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">          </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">上云就上阿里云。</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">腾讯云</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">          </span><span class="nt">logo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">c/cloud-tencent.jpg</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">          </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://cloud.tencent.com/</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">          </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">产业智变，云启未来。</span>
+</span></code></pre></div>
+<ul>
+<li>做了手机电脑自适应以及夜间模式。</li>
+<li>增加了搜索功能，以及下拉的热词选项（基于百度 API）。</li>
+<li>增加了一言、和风天气的 API（和风天气 API 已经官方已经不再支持，目前还没到到替代）。</li>
+</ul>
+<h2 id="windows">Windows 下安装部署<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h2>
+<p>本安装部署在 Windows 7 x64 上测试没问题，相关操作同样适用于 Windows 10，如有任何问题，欢迎留言或者微信与我联系。</p>
+<h3 id="hugo">第一，下载 hugo<a class="headerlink" href="#hugo" title="Permanent link">&para;</a></h3>
+<p>下载链接：<a href="https://github.com/gohugoio/hugo/releases">https://github.com/gohugoio/hugo/releases</a>，在这里我们下载 <a href="https://github.com/gohugoio/hugo/releases/download/v0.89.4/hugo_0.89.4_Windows-64bit.zip">hugo_0.89.4_Windows-64bit.zip</a>。</p>
+<p><a class="glightbox" href="https://kg.weiyan.cc/2023/11/download-hugo-windows.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="download-hugo-windows" src="https://kg.weiyan.cc/2023/11/download-hugo-windows.png" /></a></p>
+<h3 id="_5">第二，解压<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>我们把 <a href="https://github.com/gohugoio/hugo/releases/download/v0.89.4/hugo_0.89.4_Windows-64bit.zip">hugo_0.89.4_Windows-64bit.zip</a> 下载到 <strong>F:\WebStack</strong> 目录下，然后解压到当前文件夹。</p>
+<p>解压完成后，在该目录会多出 <code>hugo.exe</code>、<code>LICENSE</code>、<code>README.md</code> 三个文件：</p>
+<p><a class="glightbox" href="https://kg.weiyan.cc/2023/11/unzip-hugo-0.89.4-windows-64bit.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="unzip hugo_0.89.4_Windows-64bit" src="https://kg.weiyan.cc/2023/11/unzip-hugo-0.89.4-windows-64bit.png" /></a></p>
+<h3 id="_6">第三，检测是否安装成功<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>通过下面的方法，检测 <code>hugo</code> 是否安装成功。</p>
+<blockquote>
+<p><strong>🏷️ 温馨提示：</strong></p>
+<p>Windows 命令运行窗口中可以使用 Tab 进行命令行补全，例如你当前目录下有一个 WebStack-Hugo 目录，你在命令行窗口中输入一个 w 后按下 Tab 键，命令行就会自动出现 WebStack-Hugo！</p>
+<p>使用命令行补全，可以减少代码（或者文件名）的输入，方便快捷，又能减少错误！</p>
+</blockquote>
+<ol>
+<li>在 Windows 中使用 <strong>Win+R</strong> 打开“<strong>运行</strong>”对话框，在对话框中输入“<strong>cmd</strong>”，点击确认。</li>
+</ol>
+<p><a class="glightbox" href="https://kg.weiyan.cc/2023/11/win-r-cmd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="win-r-cmd" src="https://kg.weiyan.cc/2023/11/win-r-cmd.png" /></a></p>
+<ol>
+<li>
+<p>在 Windows 运行窗口，先切换盘符到 <strong>F</strong> 盘，然后进入 <code>hugo</code> 的解压缩目录（<strong>F:\WebStack</strong>），具体操作如下。</p>
+</li>
+<li>
+<p>在光标处输入 <strong>F:</strong>，然后按回车；</p>
+<p><a class="glightbox" href="https://kg.weiyan.cc/2023/11/cmd-change-dir.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="cmd-change-dir" src="https://kg.weiyan.cc/2023/11/cmd-change-dir.png" /></a></p>
+</li>
+<li>
+<p>我们就将盘符切换为 <strong>F</strong> 盘；</p>
+<p><a class="glightbox" href="https://kg.weiyan.cc/2023/11/cmd-f-dir.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="cmd-f-dir" src="https://kg.weiyan.cc/2023/11/cmd-f-dir.png" /></a></p>
+</li>
+<li>
+<p>接着输入 <strong>cd WebStack</strong>，回车，就进入了 <strong>F:\WebStack</strong> 目录；使用 <strong>ls</strong> 可以看到当前目录下的文件。</p>
+<p><a class="glightbox" href="https://kg.weiyan.cc/2023/11/webstack-win-ls.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="webstack-win-ls" src="https://kg.weiyan.cc/2023/11/webstack-win-ls.png" /></a></p>
+</li>
+<li>
+<p>最后，输入 <strong>hugo.exe version</strong>，回车，如图所示，则代表安装成功。</p>
+<p><a class="glightbox" href="https://kg.weiyan.cc/2023/11/hugo-exe-version.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="hugo-exe-version" src="https://kg.weiyan.cc/2023/11/hugo-exe-version.png" /></a></p>
+</li>
+</ol>
+<h3 id="_7">第四，下载主题<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>浏览器打开 <a href="https://github.com/shenweiyan/WebStack-Hugo">https://github.com/shenweiyan/WebStack-Hugo</a>，点击 Code 下的 <strong>"Download ZIP"</strong>，把 <strong>WebStack-hugo-main.zip</strong> 下载到刚才 hugo 解压缩的目录（<strong>F:\WebStack</strong>）。</p>
+<p><a class="glightbox" href="https://kg.weiyan.cc/2023/11/webstack-download-zip.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="webstack-download-zip" src="https://kg.weiyan.cc/2023/11/webstack-download-zip.png" /></a></p>
+<p><a class="glightbox" href="https://kg.weiyan.cc/2023/11/webstack-hugo-main-zip.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="webstack-hugo-main-zip" src="https://kg.weiyan.cc/2023/11/webstack-hugo-main-zip.png" /></a></p>
+<h3 id="_8">第五，解压和重命名<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>把 <strong>WebStack-Hugo-main.zip</strong> 解压到当前目录。</p>
+<p><a class="glightbox" href="https://kg.weiyan.cc/2023/11/webstack-hugo-main-unzip.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="webstack-hugo-main-unzip" src="https://kg.weiyan.cc/2023/11/webstack-hugo-main-unzip.png" /></a>
+<a class="glightbox" href="https://kg.weiyan.cc/2023/11/webstack-hugo-main-rename.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="webstack-hugo-main-rename" src="https://kg.weiyan.cc/2023/11/webstack-hugo-main-rename.png" /></a></p>
+<h3 id="_9">第六，安装主题<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>首先，进入 <strong>F:\WebStack</strong> 目录；</p>
+<p>然后，创建一个 <strong>themes</strong> 的文件夹；</p>
+<p><a class="glightbox" href="https://kg.weiyan.cc/2023/11/create-themes-dir.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="create-themes-dir" src="https://kg.weiyan.cc/2023/11/create-themes-dir.png" /></a></p>
+<p>接着，把解压后的 <strong>WebStack-Hugo</strong> 整个文件夹移动到 <strong>themes</strong> 中。</p>
+<p><a class="glightbox" href="https://kg.weiyan.cc/2023/11/mv-webstack-hugo-to-themes.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="mv-webstack-hugo-to-themes" src="https://kg.weiyan.cc/2023/11/mv-webstack-hugo-to-themes.png" /></a></p>
+<p>第四，将 <code>themes/WebStack-Hugo/exampleSite</code> 目录下的所有文件复制到 hugo 站点根目录（即 <code>F:\WebStack</code>）。</p>
+<p><a class="glightbox" href="https://kg.weiyan.cc/2023/11/cp-examplesite.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="cp-examplesite" src="https://kg.weiyan.cc/2023/11/cp-examplesite.png" /></a></p>
+<h3 id="_10">第七，启动预览<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>在刚才已经打开的 Windows 命令运行窗口中，使用下面的命令执行 <strong>hugo server</strong>，启动站点——Hugo 可以启动一个 Web 服务器，同时构建站点内容到内存中并在检测到文件更改后重新渲染，方便我们在开发环境实时预览对站点所做的更改。</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>hugo.exe<span class="w"> </span>server
+</span></code></pre></div>
+<p><a class="glightbox" href="https://kg.weiyan.cc/2023/11/hugo-exe-server.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="hugo-exe-server" src="https://kg.weiyan.cc/2023/11/hugo-exe-server.png" /></a></p>
+<p>最后，在浏览器中打开 <a href="http://127.0.0.1:1313/"><strong>http://127.0.0.1:1313/</strong></a>，即可看到生成的站点。</p>
+<p><a class="glightbox" href="https://kg.weiyan.cc/2023/11/webstack-hugo-1313.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="webstack-hugo-1313" src="https://kg.weiyan.cc/2023/11/webstack-hugo-1313.png" /></a></p>
+<h2 id="linux">Linux 下安装部署<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h2>
+<p>安装完本 WebStack-Hugo 主题后，将 exampleSite 目录下的文件复制到 hugo 站点根目录，根据需要把 config.toml 的一些信息改成自己的，导航的网址信息可通过 data 目录下 webstack.yml 修改。</p>
+<p>具体执行步骤如下：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mkdir<span class="w"> </span>/home/shenweiyan/mysite
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">cd</span><span class="w"> </span>/home/shenweiyan/mysite
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># 安装 WebStack-Hugo 主题</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/shenweiyan/WebStack-Hugo.git<span class="w"> </span>themes/WebStack-Hugo
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># 将 exampleSite 目录下的文件复制到 hugo 站点根目录</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="nb">cd</span><span class="w"> </span>/home/shenweiyan/mysite
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>cp<span class="w"> </span>-r<span class="w"> </span>themes/WebStack-Hugo/exampleSite/*<span class="w"> </span>./
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="c1"># 启动 hugo 站点</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>hugo<span class="w"> </span>server
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="c1"># 如果你知道你的公网 ip, 如下面的 132.76.230.31, 可以使用下面的方式执行 hugo server</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>hugo<span class="w"> </span>server<span class="w"> </span>--baseUrl<span class="o">=</span><span class="m">132</span>.76.230.31<span class="w"> </span>--bind<span class="o">=</span><span class="m">0</span>.0.0.0
+</span></code></pre></div>
+<p>也可以参考 <a href="https://github.com/jetsung">@jetsung</a> 在 <a href="https://github.com/shenweiyan/WebStack-Hugo/pull/15">pull 15</a> 所用的方法安装部署：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># 创建项目</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>mkdir<span class="w"> </span>navsites
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nb">cd</span><span class="w"> </span><span class="nv">$_</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1"># 初始化项目</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>git<span class="w"> </span>init
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="c1"># 将 WebStack-Hugo 源下载到 themes/WebStack-Hugo 文件夹</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>git<span class="w"> </span>submodule<span class="w"> </span>add<span class="w"> </span>https://github.com/shenweiyan/WebStack-Hugo.git<span class="w"> </span>themes/WebStack-Hugo
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>cp<span class="w"> </span>-r<span class="w"> </span>themes/WebStack-Hugo/exampleSite/*<span class="w"> </span>./
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="c1"># 安装 hugo</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>go<span class="w"> </span>install<span class="w"> </span>github.com/gohugoio/hugo@latest
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="c1"># 本地测试</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>hugo<span class="w"> </span>server
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="c1"># 生成 docs 文件夹，将并静态内容生成至此处</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>hugo<span class="w"> </span>-D
+</span></code></pre></div>
+<h2 id="html">导出 HTML 静态资源<a class="headerlink" href="#html" title="Permanent link">&para;</a></h2>
+<p>Windows/Linux 下执行的 <strong>hugo server</strong> 命令将会通过热加载的方式临时启动一个 Hugo 服务器（Hugo 可以启动一个 Web 服务器，同时构建站点内容到内存中并在检测到文件更改后重新渲染，方便我们在开发环境实时预览对站点所做的更改），这个时候我们打开浏览器 <a href="http://127.0.0.1:1313/">http://127.0.0.1:1313/</a>，就可以看到我们站点的样子了。</p>
+<p>如果我们想要把我们的站点部署到 GitHub/Gitee Pages（或者本地的服务器），我们可以：</p>
+<h3 id="1">1. 生成静态页面内容<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>可以通过下面的命令，生成(构建)静态页面内容。</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">hugo</span> <span class="o">-</span><span class="n">D</span> <span class="n">或者</span> <span class="n">hugo</span> <span class="o">--</span><span class="n">minify</span>
+</span></code></pre></div>
+<p>这个命令会默认在 <strong><code>public/</code></strong> 目录中生成您的网站，当然您可以通过改变站点配置中的 <strong><code>publishDir</code></strong> 选项来配置这个输出目录。</p>
+<blockquote>
+<p><strong>🏷️ Hugo 小知识 - 草案、未来和过期内容</strong></p>
+<p>Hugo 允许您在网站内容的前言设定中设置文档的<code>draft</code>，<code>publishdate</code>甚至<code>expirydate</code>字段。默认情况下，Hugo 不会发布下面内容：</p>
+<ol>
+<li><code>publishdate</code> 发布日期值设定在未来的内容；</li>
+<li><code>draft:true</code> 草案状态设置为真的内容；</li>
+<li><code>expirydate</code> 过期日期值设置为过去某事件的内容。</li>
+</ol>
+<p>这三个可以在本地开发和部署编译时通过对<code>hugo</code>和<code>hugo server</code>分别添加如下参数来重新设定，或者在配置文件中设定对应(不包含<code>--</code>)域的 boolean 值：</p>
+<ol>
+<li>-F, --buildFuture include content with publishdate in the future</li>
+<li>-D, --buildDrafts include content marked as draft</li>
+<li>-E, --buildExpired include expired content</li>
+</ol>
+</blockquote>
+<h3 id="2">2. 部署站点<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>把生成的 <code>public/</code> 静态内容目录上传到 GitHub，开启 GitHub/Gitee Pages，并且绑定 cname 域名即可。</p>
+<h2 id="_11">使用说明与技巧<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<p>这是一个开源的公益项目，你可以拿来制作自己的网址导航，也可以做与导航无关的网站。</p>
+<h3 id="_12">左导航栏图标<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p>左侧、顶部导航栏图标用的都是 <strong>Font Awesome</strong> 图标库 <strong>v5</strong> 版本 <strong>Free</strong> 的图标。链接如下：</p>
+<p>🔗 <a href="https://fontawesome.com/v5/search?o=r&amp;m=free">https://fontawesome.com/v5/search?o=r&amp;m=free</a></p>
+<p><a class="glightbox" href="https://kg.weiyan.cc/2023/11/fontawesome-v5-free.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="fontawesome-v5-free" src="https://kg.weiyan.cc/2023/11/fontawesome-v5-free.png" /></a></p>
+<h3 id="_13">调整头部搜索栏<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p>头部搜索栏的默认位置可以通过下面的方法进行修改。</p>
+<ol>
+<li>直接修改 <strong>layouts/partials/content_search.html</strong>，调整对应部分的位置。</li>
+<li>调整默认的搜索（即点击"常用/搜索/工具 ...." 时下指箭头的指向），把对应的 id 添加到对应的 label 里面。</li>
+</ol>
+<p><a class="glightbox" href="https://kg.weiyan.cc/2023/11/set-default-search-bing.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="set-default-search-bing" src="https://kg.weiyan.cc/2023/11/set-default-search-bing.png" /></a>
+<a class="glightbox" href="https://kg.weiyan.cc/2023/11/view-default-search-bing.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="view-default-search-bing" src="https://kg.weiyan.cc/2023/11/view-default-search-bing.png" /></a></p>
+<h3 id="_14">自定义头部导航<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p><a href="https://github.com/shenweiyan/WebStack-Hugo">WebStack-Hugo</a> 把头部的导航菜单的各个信息集成在了 <strong>data/header.yml</strong> 文件中，每个人可以根据自己的需要调整。</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">item</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">首页</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fa fa-home</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;./&quot;</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">item</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">作者</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fa fa-book</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">  </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.yuque.com/shenweiyan</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">item</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">配置</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">  </span><span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fa fa-cog</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">  </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">  </span><span class="nt">list</span><span class="p">:</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">源码</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">      </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;#&quot;</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">图标</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">      </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;#&quot;</span>
+</span></code></pre></div>
+<h3 id="_15">获取网站图标<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p><a href="https://nav.bioitee.com/">Bio &amp; IT 网址导航</a>默认使用的是个人收集的网站图标，主要是查看网站源码、百度、谷歌等途径把对应导航的图标下载下来，这个方法比较原始繁琐，适合导航不是很多的情况。</p>
+<h4 id="_16">一为<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h4>
+<p>你也可以使用一为提供的的 <a href="https://www.iowen.cn/tag/favicon/">Favicon</a> 图标 <a href="https://www.iowen.cn/tag/api/">API</a>：<a href="https://api.iowen.cn/doc/favicon.html">获取网站 Favicon - 免费 API 数据接口调用服务平台</a>。</p>
+<p><strong>使用方法：</strong></p>
+<ol>
+<li>
+<p>获取 Favicon 图标
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>https://api.iowen.cn/favicon/www.iowen.cn.png
+</span></code></pre></div></p>
+</li>
+<li>
+<p>刷新缓存
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>https://api.iowen.cn/favicon/www.iowen.cn.png?refresh=true
+</span></code></pre></div></p>
+</li>
+<li>
+<p>将上方代码中的 <code>www.iowen.cn</code> 替换为你需要获取的网址域名。</p>
+</li>
+</ol>
+<h4 id="faviconim">Favicon.im<a class="headerlink" href="#faviconim" title="Permanent link">&para;</a></h4>
+<p>除了一为的 API，你也可以使用 <a href="https://favicon.im/">https://favicon.im/</a> 来在网页中插入其他网站的 Favicon 图片，可以放大显示。</p>
+<p><a class="glightbox" href="https://kg.weiyan.cc/2024/08/favicon-im.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="favicon-im" src="https://kg.weiyan.cc/2024/08/favicon-im.webp" /></a></p>
+<h4 id="favicon-extractor">Favicon Extractor<a class="headerlink" href="#favicon-extractor" title="Permanent link">&para;</a></h4>
+<p>类似网站 <a href="https://www.faviconextractor.com/">Favicon Downloader</a>，代码<a href="https://github.com/seadfeng/favicon-downloader">开源</a>。</p>
+<p><a class="glightbox" href="https://kg.weiyan.cc/2024/08/favicon-extractor.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="favicon-extractor" src="https://kg.weiyan.cc/2024/08/favicon-extractor.webp" /></a></p>
+<h2 id="_17">已知问题<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
+<ol>
+<li>日间模式与夜间模式切换时候，头部搜索栏的背景图片切换不够流畅（个人的 js 知识有限，在 footer.html 做了一些简单的调整来实现），如果你有更好的想法，欢迎 PR 或者交流。</li>
+</ol>
+<h2 id="_18">感谢墙<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
+<p>本主题的部分代码参考了以下几个开源项目，特此感谢。</p>
+<ul>
+<li><a href="https://github.com/WebStackPage/WebStackPage.github.io">WebStackPage/WebStackPage.github.io</a></li>
+<li><a href="https://github.com/liutongxu/liutongxu.github.io">liutongxu/liutongxu.github.io</a></li>
+<li><a href="https://github.com/iplaycode/webstack-hugo">iplaycode/webstack-hugo</a></li>
+</ul>
+<p>感谢 <a href="https://github.com/WebStackPage/WebStackPage.github.io">WebStack</a> 的作者 <a href="https://twitter.com/decohack">Viggo</a> 的肯定和<a href="https://twitter.com/decohack/status/1569188705478516738">推广宣传</a>。</p>
+<p><a class="glightbox" href="https://kg.weiyan.cc/2023/11/twitter-decohack-webstack-hugo.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="twitter-decohack-webstack-hugo" src="https://kg.weiyan.cc/2023/11/twitter-decohack-webstack-hugo.png" /></a></p>
+<p>感谢以下所有朋友对本主题所做出的贡献。     <br />
+<strong><a href="https://github.com/yinhanghang">@yanbeiyinhanghang</a></strong>    <br />
+<strong><a href="https://github.com/jetsung">@jetsung</a></strong>       </p>
+<h2 id="_19">赞赏<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h2>
+<p>如果你觉得本项目对你有所帮助，欢迎请作者喝杯热咖啡 &gt;.&lt;     </p>
+<p><a class="glightbox" href="https://kg.weiyan.cc/0000/img/donate.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="donate-wecaht-aliapy" src="https://kg.weiyan.cc/0000/img/donate.webp" /></a></p>
+<h2 id="_20">反馈与交流<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h2>
+<p>最后，最重要的，秉承 WebStack 的宗旨，这是一个开源的公益项目，你可以拿来制作自己的网址导航，也可以做与导航无关的网站。</p>
+<p>WebStack 有非常多的魔改版本，这是其中一个。</p>
+<p><strong>如果你对本主题进行了一些个性化调整，欢迎在本项目中 </strong><a href="https://github.com/shenweiyan/WebStack-Hugo/issues"><strong>issues</strong></a><strong> 中一起分享交流！</strong></p>
+<p><strong>如果参考本主题构建了属于你自己的网址导航，欢迎在本评论区（或源码 </strong><a href="https://github.com/shenweiyan/WebStack-Hugo/issues"><strong>issues</strong></a><strong> 区）留下你网站的访问链接 &gt;.&lt;</strong></p>
+<script src="https://giscus.app/client.js"
+    data-repo="shenweiyan/Digital-Garden"
+    data-repo-id="R_kgDOKgxWlg"
+    data-mapping="number"
+    data-term="10"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="light"
+    data-lang="zh-CN"
+    crossorigin="anonymous"
+    async>
+</script>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../../FAQ/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Frequently asked questions">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                Frequently asked questions
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+    
+      <div class="md-copyright__highlight">
+        版权所有 © 2025 <a href="https://github.com/orgs/BioITee/discussions" target="_blank">BioIT 爱好者</a> | <a href="http://beian.miit.gov.cn/" target="_blank" rel="noopener">粤ICP备16023717号</a>
+      </div>
+    
+    
+  </div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/navpage" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.code.annotate", "content.code.copy", "content.code.select", "content.tabs.link", "content.footnote.tooltips", "content.action.edit", "content.tooltips", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.expand", "navigation.prune", "navigation.footer", "navigation.instant", "navigation.instant.progress", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "navigation.path", "navigation.instant.prefetch"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+  
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  <!-- <script src="../../assets/javascripts/custom.js"></script> -->
+
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
